@@ -1,0 +1,48 @@
+Instructions:
+
+1. Create a free Azure Account (in case you don't have one available)
+https://azure.microsoft.com/en-gb/offers/ms-azr-0044p/
+In case you want to use another cloud provider, feel free to do it
+Note: for Azure, you will have available 170€ (if a remember correctly) of free Azure credits. You will need to introduce a debit/credit card, but no charghes will be applied until you get over 170€ of expenses
+Remember to delete that account so Microsoft won't charge anything in your bank account
+
+2. Create a service connection(in Azure DevOps portal, https://dev.azure.com/ ) so you can deploy resources from Azure Devops to Azure portal(https://portal.azure.com)
+https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml
+
+3. Clone the repository https://github.com/AleksAlonso/RocheDevOpsAssessment.git (ask for permissions on the repo first with a GitHub account)
+
+4. Open RocheDevOpsAssessment.sln
+	4.a Make it compile
+	4.b Make all Unit tests green
+	
+5. You should push the changes to your own repository in Azure Devops, not to the github acccount
+	5.a Use GitFlow branching strategy
+	5.b Add a build policy in the PR (When the pipeline is ready is ready, see 6)
+	5.c Follow best practiques
+	
+6. Make use of IaC to create the resources needed in Azure (just a Webapp).
+	6.a Use ARM templates
+	6.b Use Terraform
+	
+6. Create a pipeline(YAML preferred, but old UI pipelines are also accepted) that is able to:
+	6.a Build the application
+	6.b Release the infrastructure with both approaches (ARM and terraform)
+	6.b Release the application in any cloud provider
+	
+7. Build a powershell script that is able to:
+	7.a Weather Forecast
+	7.b Show the results in the pipeline
+	
+	
+9. When everything is ready and deployed in Azure, make sure all UI tests in the VS solution are working by:
+	
+	9.a Modify the UI tests so they run against your brand new cloud environment
+	9b. Selenium tests are green
+	
+	
+If you have any further questions in the process, you can contact us anytime you want
+
+You will have X(agreed) days to solve this exercise.
+
+When you are done, we will need to defend your solution with us.
+	

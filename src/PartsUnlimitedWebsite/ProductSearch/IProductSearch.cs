@@ -6,6 +6,6 @@ namespace RocheDevOpsAssessment.ProductSearch
 {
     public interface IProductSearch
     {
-        Task<IEnumerable<Product>> Search(string query);
+        Task<IEnumerable<Product>> Search(bool query);
     }
 }

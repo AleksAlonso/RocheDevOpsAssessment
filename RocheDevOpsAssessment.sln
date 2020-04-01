@@ -13,6 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RocheDevOpsAssessment.UnitT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RocheDevOpsAssessment.SeleniumTests", "test\FabrikamFiber.SeleniumTests\RocheDevOpsAssessment.SeleniumTests.csproj", "{8BA1E3A6-DD40-4534-B987-712B6A6E1D02}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9266FC91-77FF-40E0-8FEC-3AE2C523A244}"
+	ProjectSection(SolutionItems) = preProject
+		Instructions = Instructions
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
