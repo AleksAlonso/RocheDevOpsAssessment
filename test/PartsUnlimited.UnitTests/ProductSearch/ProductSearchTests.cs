@@ -26,7 +26,7 @@ namespace RocheDevOpsAssessment.UnitTests.ProductSearch
         {
             var prodSearch = new StringContainsProductSearch(new MockDataContext());
             var result = await prodSearch.Search("proD");
-            Assert.AreEqual(6, result.Count());
+            Assert.AreEqual(5, result.Count());
         }
 
         [TestMethod]

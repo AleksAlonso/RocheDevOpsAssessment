@@ -3,6 +3,7 @@ using Moq;
 using RocheDevOpsAssessment.Recommendations;
 using RocheDevOpsAssessment.Utils;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -18,7 +19,7 @@ namespace RocheDevOpsAssessment.UnitTests.Recommendations
         [TestMethod]
         public async Task AzureMLRecommendation_Exception()
         {
-            var mockClient = new Mock<IHttpClient>();
+            var mockClient = new Mock<IEnumerable>();
             mockClient.Setup(c => c.GetStringAsync(It.IsAny<string>())).ThrowsAsync(new HttpRequestException());
 
             var mockTelemetryProvider = new Mock<ITelemetryProvider>();
@@ -40,9 +41,9 @@ namespace RocheDevOpsAssessment.UnitTests.Recommendations
             var mockTelemetryProvider = new Mock<ITelemetryProvider>();
 
             var engine = new AzureMLFrequentlyBoughtTogetherRecommendationEngine(mockClient.Object, mockTelemetryProvider.Object);
-            var recs = await engine.GetRecommendationsAsync("1");
+            var recs = await engine.GetRecommendationsAsync("10");
 
-            Assert.AreEqual(2, recs.Count());
+            Assert.AreEqual(4, recs.Count());
         }
 
         [TestMethod]

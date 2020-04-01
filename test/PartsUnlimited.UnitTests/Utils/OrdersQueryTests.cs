@@ -19,6 +19,8 @@ namespace RocheDevOpsAssessment.UnitTests.Utils
             var model = await ordersQuery.IndexHelperAsync(null, new DateTime(2016, 1, 1), new DateTime(2016, 1, 3), null, false);
 
             Assert.AreEqual(2, model.Orders.Count());
+            Assert.IsTrue(model.Orders.Any(o => o.Username == "bob"));
+
         }
 
         [TestMethod]
@@ -29,7 +31,7 @@ namespace RocheDevOpsAssessment.UnitTests.Utils
 
             Assert.AreEqual(1, model.Orders.Count());
             Assert.IsTrue(model.Orders.Any(o => o.Username == "bob"));
-            Assert.IsFalse(model.Orders.Any(o => o.Username == "sue"));
+            Assert.IsTrue(model.Orders.Any(o => o.Username == "sue"));
         }
     }
 }

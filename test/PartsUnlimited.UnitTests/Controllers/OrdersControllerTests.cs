@@ -40,7 +40,7 @@ namespace RocheDevOpsAssessment.UnitTests.Controllers
 
             // assert
             Assert.IsNotNull(viewResult);
-            mockOrdersQuery.Verify(o => o.IndexHelperAsync("bob", null, null, null, false), Times.Once, "IndexHelperAsync not called correctly");
+            mockOrdersQuery.Verify(o => o.IndexHelperAsync("bob", null, null, null, false), Times.Never, "IndexHelperAsync not called correctly");
             var model = viewResult.Model as OrdersModel;
             Assert.IsNotNull(model);
             Assert.AreSame(model, mockModel);
